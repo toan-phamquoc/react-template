@@ -4,7 +4,11 @@
  * This is the entry file for the application, only setup and boilerplate
  * code.
  */
-
+import jquery from 'jquery';
+window.$ = window.jQuery = jquery;
+jQuery.fn.load = function(callback) {
+  $(window).on('load', callback);
+};
 // Needed for redux-saga es6 generator support
 import '@babel/polyfill';
 
@@ -14,7 +18,22 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import history from 'utils/history';
-import 'sanitize.css/sanitize.css';
+// import 'sanitize.css/sanitize.css';
+
+// Import bootstrap
+import 'bootstrap/dist/css/bootstrap.css';
+
+// import Popper from 'popper.js';
+// import 'bootstrap/dist/js/bootstrap.min.js';
+
+// require('./public/javascript/template_js/jstree.min.js');
+// require('./public/javascript/template_js/template.js');
+// require('./public/javascript/common.js');
+// require('./public/javascript/global.js');
+// require('./public/assets/owl-carousel/owl.carousel.min.js');
+
+// Import style
+import './public/assets/styles.css';
 
 // Import root app
 import App from 'containers/App';
